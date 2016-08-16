@@ -25,7 +25,7 @@ public abstract class PKCS11ProviderTestCase extends TestCase {
     	if (System.getProperty("os.name").contains("Windows"))
     		pkcs11_path = System.getenv("ProgramFiles")+"\\Smart Card Bundle\\opensc-pkcs11.dll";
     	else
-    		pkcs11_path = "/usr/lib/opensc-pkcs11.so";
+    		pkcs11_path = "/Library/OpenSC/lib/opensc-pkcs11.so";
     		
         this.provider = new PKCS11Provider(pkcs11_path);
     	Security.addProvider(this.provider);

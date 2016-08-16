@@ -22,7 +22,7 @@
 
 package org.opensc.pkcs15.asn1.proxy;
 
-import org.bouncycastle.asn1.DEREncodable;
+import org.bouncycastle.asn1.ASN1Encodable;
 
 /**
  * A directory for resolving references, as e.g. implemented by
@@ -30,7 +30,7 @@ import org.bouncycastle.asn1.DEREncodable;
  * 
  * @author wglas
  */
-public interface Directory<ReferenceType extends DEREncodable, EntityType extends DEREncodable> {
+public interface Directory<ReferenceType extends ASN1Encodable, EntityType extends ASN1Encodable> {
 
     /**
      * @param ref The reference to resolve.

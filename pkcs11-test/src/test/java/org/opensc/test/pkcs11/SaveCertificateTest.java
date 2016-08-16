@@ -153,7 +153,7 @@ public class SaveCertificateTest extends PKCS11ProviderTestCase {
         certGen.setNotAfter(to_date);
 
         certGen.setPublicKey(dup);
-        certGen.setSignatureAlgorithm("SHA1withRSA");
+        certGen.setSignatureAlgorithm("SHA256withRSA");
         certGen.addExtension(X509Extensions.BasicConstraints, true,
                 new BasicConstraints(false));
         certGen.addExtension(X509Extensions.KeyUsage, true, new KeyUsage(
