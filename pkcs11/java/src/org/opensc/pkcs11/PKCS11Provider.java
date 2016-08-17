@@ -332,7 +332,7 @@ public class PKCS11Provider extends Provider implements DestroyableParent
     
 	/**
 	 * @return Returns the pkcs11ModuleHandle used by calls to the
-	 *         natvie JNI functions of associated services.
+	 *         native JNI functions of associated services.
 	 */
 	public long getPkcs11ModuleHandle()
 	{
