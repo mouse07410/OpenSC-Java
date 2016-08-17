@@ -30,7 +30,7 @@ import org.bouncycastle.asn1.ASN1EncodableVector;
 import org.bouncycastle.asn1.ASN1Sequence;
 import org.bouncycastle.asn1.DEREncodable;
 import org.bouncycastle.asn1.DERInteger;
-import org.bouncycastle.asn1.DERObject;
+import org.bouncycastle.asn1.ASN1Object;
 import org.bouncycastle.asn1.DERSequence;
 import org.opensc.pkcs15.asn1.Context;
 import org.opensc.pkcs15.asn1.ContextHolder;
@@ -131,7 +131,7 @@ public class PublicRSAKeyAttributes extends ASN1Encodable implements SpecificPub
      * @see org.bouncycastle.asn1.ASN1Encodable#toASN1Object()
      */
     @Override
-    public DERObject toASN1Object() {
+    public ASN1Object toASN1Object() {
         
         ASN1EncodableVector v = new ASN1EncodableVector();
 

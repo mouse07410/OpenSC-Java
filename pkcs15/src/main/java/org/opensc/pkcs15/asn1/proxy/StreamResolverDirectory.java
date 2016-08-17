@@ -26,14 +26,14 @@ import java.io.IOException;
 
 import org.bouncycastle.asn1.ASN1InputStream;
 import org.bouncycastle.asn1.ASN1OutputStream;
-import org.bouncycastle.asn1.DEREncodable;
+import org.bouncycastle.asn1.ASN1Encodable;
 
 /**
  * An adapter for using a StreamResolver as a Directory.
  * 
  * @author wglas
  */
-public class StreamResolverDirectory<ReferenceType extends DEREncodable, EntityType extends DEREncodable> implements Directory<ReferenceType, EntityType> {
+public class StreamResolverDirectory<ReferenceType extends ASN1Encodable, EntityType extends ASN1Encodable> implements Directory<ReferenceType, EntityType> {
 
     private final StreamResolver<ReferenceType> streamResolver;
     private final InstanceFactory<EntityType> instanceFactory;

@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import org.bouncycastle.asn1.DEREncodable;
+import org.bouncycastle.asn1.ASN1Encodable;
 
 /**
  * A directory for resolving references, as e.g. implemented by
@@ -34,7 +34,7 @@ import org.bouncycastle.asn1.DEREncodable;
  * 
  * @author wglas
  */
-public interface StreamResolver<ReferenceType extends DEREncodable> {
+public interface StreamResolver<ReferenceType extends ASN1Encodable> {
 
     /**
      * @param ref The reference to resolve.

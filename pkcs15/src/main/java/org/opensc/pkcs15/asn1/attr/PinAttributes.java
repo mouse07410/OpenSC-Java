@@ -31,7 +31,7 @@ import org.bouncycastle.asn1.ASN1Sequence;
 import org.bouncycastle.asn1.ASN1TaggedObject;
 import org.bouncycastle.asn1.DERGeneralizedTime;
 import org.bouncycastle.asn1.DERInteger;
-import org.bouncycastle.asn1.DERObject;
+import org.bouncycastle.asn1.ASN1Object;
 import org.bouncycastle.asn1.DEROctetString;
 import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.asn1.DERTaggedObject;
@@ -161,7 +161,7 @@ public class PinAttributes extends ASN1Encodable {
      * @see org.bouncycastle.asn1.ASN1Encodable#toASN1Object()
      */
     @Override
-    public DERObject toASN1Object() {
+    public ASN1Object toASN1Object() {
         
         ASN1EncodableVector v = new ASN1EncodableVector();
 

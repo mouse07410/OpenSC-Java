@@ -24,7 +24,7 @@ package org.opensc.pkcs15.asn1.attr;
 
 import java.security.interfaces.RSAPublicKey;
 
-import org.bouncycastle.asn1.DEREncodable;
+import org.bouncycastle.asn1.ASN1Encodable;
 import org.opensc.pkcs15.asn1.proxy.ReferenceProxy;
 
 /**
@@ -36,5 +36,5 @@ import org.opensc.pkcs15.asn1.proxy.ReferenceProxy;
  * 
  * @author wglas
  */
-public interface PublicKeyObject extends RSAPublicKey, DEREncodable {
+public interface PublicKeyObject extends RSAPublicKey, ASN1Encodable {
 }

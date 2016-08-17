@@ -22,7 +22,7 @@
 
 package org.opensc.pkcs15.asn1.proxy;
 
-import org.bouncycastle.asn1.DEREncodable;
+import org.bouncycastle.asn1.ASN1Encodable;
 
 /**
  * A marker interface for explicitly resolving the referenced entity.
@@ -45,7 +45,7 @@ import org.bouncycastle.asn1.DEREncodable;
  * 
  * @author wglas
  */
-public interface ReferenceProxy<EntityType extends DEREncodable> extends DEREncodable {
+public interface ReferenceProxy<EntityType extends ASN1Encodable> extends ASN1Encodable {
 
     /**
      * @return The delegate, which is hidden by this proxy.

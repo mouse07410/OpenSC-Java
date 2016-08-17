@@ -26,7 +26,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-import org.bouncycastle.asn1.DEREncodable;
+import org.bouncycastle.asn1.ASN1Encodable;
 import org.opensc.pkcs15.asn1.Context;
 import org.opensc.pkcs15.asn1.ContextHolder;
 
@@ -35,9 +35,9 @@ import org.opensc.pkcs15.asn1.ContextHolder;
  * 
  * @author wglas
  */
-public class ReferenceProxyFactory<ReferenceType extends DEREncodable,EntityType extends DEREncodable> {
+public class ReferenceProxyFactory<ReferenceType extends ASN1Encodable,EntityType extends ASN1Encodable> {
 
-    private static class DirectoryInvocationHandler<ReferenceType extends DEREncodable,EntityType extends DEREncodable>
+    private static class DirectoryInvocationHandler<ReferenceType extends ASN1Encodable,EntityType extends ASN1Encodable>
     implements InvocationHandler
     {
         private final ReferenceType reference;
