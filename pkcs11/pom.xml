@@ -13,7 +13,7 @@
     <jni.libPrefix>lib</jni.libPrefix>
     <jni.libExtension>dylib</jni.libExtension>
     <jni.targetDir>target</jni.targetDir>
-    <jni.build.dir>jni/build/unix/release</jni.build.dir>
+    <jni.build.dir>jni/build/macosx/release</jni.build.dir>
     <org.opensc.pkcs11.distRepoId>clazzes-repository</org.opensc.pkcs11.distRepoId>
     <org.opensc.pkcs11.distRepoURL>scpexe://maven.clazzes.org/var/www/htdocs/maven.clazzes.org</org.opensc.pkcs11.distRepoURL>
    </properties>
