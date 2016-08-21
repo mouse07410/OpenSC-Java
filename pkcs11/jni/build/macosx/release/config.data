@@ -1,7 +1,20 @@
 #
 # Default makefile variable settings.
 #
+ac CC=clang
+ac CPP=clang -E
+ac CXX=clang++
 ac CFLAGS=-O2 -Wall
 ac CXXFLAGS=-O2 -Wall
 ac JNI_CFLAGS=-I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/darwin
 ac LIBDYN=dylib
+ac DYN_LDFLAGS=-shared -dynamiclib
+ac DYN_CFLAGS=-fPIC
+ac SSL_LDFLAGS=-L/opt/local/lib
+ac SSL_LIBS=-lcrypto -lssl
+ac OPENSC_CFLAGS=-I/opt/local/include
+ac OPENSC_LDFLAGS=-L/Library/OpenSC/lib
+ac OPENSC_LIBS=-lopensc
+ac PKCS11_CFLAGS=-I/opt/local/include
+ac PKCS11_LDFLAGS=-L/opt/local/lib
+ac PKCS11_LIBS=-lltdl

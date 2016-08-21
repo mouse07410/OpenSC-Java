@@ -8,7 +8,7 @@
   <groupId>org.opensc</groupId>
   <artifactId>opensc-PKCS11</artifactId>
   <properties>
-    <project.majorVersion>0.3</project.majorVersion>
+    <project.majorVersion>0.4</project.majorVersion>
     <jni.classifier>${os.arch}</jni.classifier>
     <jni.libPrefix>lib</jni.libPrefix>
     <jni.libExtension>dylib</jni.libExtension>
