@@ -216,7 +216,7 @@ public class BaseTest extends PKCS11ProviderTestCase
 					dec.init(Cipher.DECRYPT_MODE,key);
 					byte[] origData = dec.doFinal(encData);
 					
-					assertEquals(this.testData,origData);
+					assertArraysEquals(this.testData,origData);
 				}
 			}
 		}		
