@@ -43,6 +43,8 @@ import org.opensc.pkcs11.wrap.PKCS11PublicKey;
 import org.opensc.pkcs11.wrap.PKCS11Session;
 import org.opensc.pkcs11.wrap.PKCS11Slot;
 
+import static org.junit.Assert.assertArrayEquals;
+
 /**
  * JUnit test for the PKCS11 provider on a fully initialized token
  * with a private key and a certificate..
@@ -216,7 +218,7 @@ public class BaseTest extends PKCS11ProviderTestCase
 					dec.init(Cipher.DECRYPT_MODE,key);
 					byte[] origData = dec.doFinal(encData);
 					
-					assertArraysEquals(this.testData,origData);
+					assertArrayEquals(this.testData,origData);
 				}
 			}
 		}		
