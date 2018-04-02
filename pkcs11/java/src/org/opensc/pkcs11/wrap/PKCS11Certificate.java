@@ -38,8 +38,6 @@ import java.util.List;
 
 import javax.security.auth.x500.X500Principal;
 
-
-
 /**
  * This class manages X509 certificates stored on the card.
  * 
