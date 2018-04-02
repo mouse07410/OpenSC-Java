@@ -92,8 +92,8 @@ public class PKCS11CipherSpi extends CipherSpi
 	@Override
 	protected void engineSetMode(String engineMode) throws NoSuchAlgorithmException
 	{
-		if (!engineMode.equals("ECB"))
-			throw new NoSuchAlgorithmException("Only ECB mode is supported.");
+	    if (!engineMode.equals("ECB"))
+		throw new NoSuchAlgorithmException("Only ECB mode is supported.");
 	}
 
 	/* (non-Javadoc)
@@ -102,8 +102,8 @@ public class PKCS11CipherSpi extends CipherSpi
 	@Override
 	protected void engineSetPadding(String padding) throws NoSuchPaddingException
 	{
-		if (!padding.equals("PKCS1Padding"))
-			throw new NoSuchPaddingException("Only PKCS1Padding is supported.");
+	    if (!padding.equals("PKCS1Padding"))
+		throw new NoSuchPaddingException("Only PKCS1Padding is supported.");
 	}
 
 	/* (non-Javadoc)
