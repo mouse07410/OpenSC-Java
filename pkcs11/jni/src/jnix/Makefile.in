@@ -25,10 +25,10 @@ ARFLAGS   = @ARFLAGS@
 
 # add -I.. in order to find config.h
 CFLAGS = \
-	@CFLAGS@  @DEFS@ @JNI_CFLAGS@ @DYN_CFLAGS@ -I.. -I$(srcdir)
+	@CFLAGS@  @DEFS@ @JNI_CFLAGS@ @DYN_CFLAGS@ -I.. -I$(srcdir) $(SYSROOT)
 
 CXXFLAGS = \
-	@CXXFLAGS@  @DEFS@ @JNI_CFLAGS@ @DYN_CFLAGS@ -I.. -I$(srcdir)
+	@CXXFLAGS@  @DEFS@ @JNI_CFLAGS@ @DYN_CFLAGS@ -I.. -I$(srcdir) $(SYSROOT)
 
 %.depend:  $(srcdir)/%.c
 	$(CC) $(CFLAGS) -M $< -o $@

@@ -4,8 +4,8 @@
 ac CC=clang
 ac CPP=clang -E
 ac CXX=clang++
-ac CFLAGS=-O2 -Wall
-ac CXXFLAGS=-O2 -Wall
+ac CFLAGS=-O2 -Wall -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+ac CXXFLAGS=-O2 -Wall -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
 ac JNI_CFLAGS=-I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/darwin
 ac LIBDYN=dylib
 ac DYN_LDFLAGS=-shared -dynamiclib

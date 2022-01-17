@@ -19,7 +19,7 @@ public abstract class PKCS11ProviderTestCase extends TestCase {
     }
 
     public void setUp() throws IOException {	
-    	// Add provider "SunPKCS11-OpenSC"
+    	// Add provider "SunPKCS11-OpenSC" instead???
     	String pkcs11_path;
     	
     	if (System.getProperty("os.name").contains("Windows"))

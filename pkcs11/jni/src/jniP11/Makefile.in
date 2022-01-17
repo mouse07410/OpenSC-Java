@@ -31,10 +31,10 @@ STRIP = @STRIP@
 
 # add -I.. in order to find config.h
 CFLAGS = \
-	@CFLAGS@  @DEFS@ @PKCS11_CFLAGS@ @JNI_CFLAGS@ @DYN_CFLAGS@ -I.. -I$(srcdir) -I$(top_srcdir)/jnix
+	@CFLAGS@  @DEFS@ @PKCS11_CFLAGS@ @JNI_CFLAGS@ @DYN_CFLAGS@ -I.. -I$(srcdir) -I$(top_srcdir)/jnix $(SYSROOT)
 
 CXXFLAGS = \
-	@CXXFLAGS@  @DEFS@ @PKCS11_CFLAGS@ @JNI_CFLAGS@ @DYN_CFLAGS@ -I.. -I$(srcdir) -I$(top_srcdir)/jnix
+	@CXXFLAGS@  @DEFS@ @PKCS11_CFLAGS@ @JNI_CFLAGS@ @DYN_CFLAGS@ -I.. -I$(srcdir) -I$(top_srcdir)/jnix $(SYSROOT)
 
 LDFLAGS = @LDFLAGS@ @PKCS11_LDFLAGS@ @JNI_LDFLAGS@ @DYN_LDFLAGS@
 

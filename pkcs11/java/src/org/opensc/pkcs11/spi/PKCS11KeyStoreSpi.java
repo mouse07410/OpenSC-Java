@@ -238,7 +238,8 @@ public class PKCS11KeyStoreSpi extends KeyStoreSpi
 				
 				if (x509NextCert == null)
 				{
-					throw new CertificateException("Cannot find the issuing CA for certificate ["+x509Certificate+"].");
+				    //throw new CertificateException("Cannot find the issuing CA for certificate ["+x509Certificate+"].");
+				    break; // to allow chains with one/leaf certificate only
 				}
 				
 				x509Certificate = x509NextCert;

@@ -153,35 +153,35 @@ public class PKCS11Provider extends Provider implements DestroyableParent
 	
 	private void initialize(String filename) throws IOException
 	{
-        this.pkcs11ModuleHandle = loadNativePKCS11Module(filename);
-        this.destroyableHolder = new DestroyableHolder();
-        this.shutdownThread = new ShutdownThread(this);
-		Runtime.getRuntime().addShutdownHook(this.shutdownThread);
+	    this.pkcs11ModuleHandle = loadNativePKCS11Module(filename);
+	    this.destroyableHolder = new DestroyableHolder();
+	    this.shutdownThread = new ShutdownThread(this);
+	    Runtime.getRuntime().addShutdownHook(this.shutdownThread);
 		
-		putService(new PKCS11Service
-        		(this, "KeyStore", "PKCS11", "org.opensc.pkcs11.spi.PKCS11KeyStoreSpi"));
-		putService(new PKCS11SignatureService
-        		(this, "Signature", "NONEwithRSA", "org.opensc.pkcs11.spi.PKCS11SignatureSpi"));
-		putService(new PKCS11SignatureService
-        		(this, "Signature", "MD5withRSA", "org.opensc.pkcs11.spi.PKCS11SignatureSpi"));
-		putService(new PKCS11SignatureService
-        		(this, "Signature", "SHA1withRSA", "org.opensc.pkcs11.spi.PKCS11SignatureSpi"));
-		putService(new PKCS11SignatureService
-        		(this, "Signature", "SHA256withRSA", "org.opensc.pkcs11.spi.PKCS11SignatureSpi"));
-		putService(new PKCS11SignatureService
-        		(this, "Signature", "SHA384withRSA", "org.opensc.pkcs11.spi.PKCS11SignatureSpi"));
-		putService(new PKCS11SignatureService
-        		(this, "Signature", "SHA512withRSA", "org.opensc.pkcs11.spi.PKCS11SignatureSpi"));
-		putService(new PKCS11SignatureService
-        		(this, "Signature", "SHA1withDSA", "org.opensc.pkcs11.spi.PKCS11SignatureSpi"));
-		putService(new PKCS11SignatureService
-        		(this, "Signature", "NONEwithDSA", "org.opensc.pkcs11.spi.PKCS11SignatureSpi"));
-        putService(new PKCS11CipherService
-                   (this, "Cipher", "RSA/ECB/PKCS1Padding", "org.opensc.pkcs11.spi.PKCS11CipherSpi"));
-        putService(new PKCS11KeyPairGeneratorService
-                   (this, "KeyPairGenerator", "RSA", "org.opensc.pkcs11.spi.PKCS11KeyPairGeneratorSpi"));
-        putService(new PKCS11KeyPairGeneratorService
-                   (this, "KeyPairGenerator", "DSA", "org.opensc.pkcs11.spi.PKCS11KeyPairGeneratorSpi"));
+	    putService(new PKCS11Service
+		       (this, "KeyStore", "PKCS11", "org.opensc.pkcs11.spi.PKCS11KeyStoreSpi"));
+	    putService(new PKCS11SignatureService
+		       (this, "Signature", "NONEwithRSA", "org.opensc.pkcs11.spi.PKCS11SignatureSpi"));
+	    putService(new PKCS11SignatureService
+		       (this, "Signature", "MD5withRSA", "org.opensc.pkcs11.spi.PKCS11SignatureSpi"));
+	    putService(new PKCS11SignatureService
+		       (this, "Signature", "SHA1withRSA", "org.opensc.pkcs11.spi.PKCS11SignatureSpi"));
+	    putService(new PKCS11SignatureService
+		       (this, "Signature", "SHA256withRSA", "org.opensc.pkcs11.spi.PKCS11SignatureSpi"));
+	    putService(new PKCS11SignatureService
+		       (this, "Signature", "SHA384withRSA", "org.opensc.pkcs11.spi.PKCS11SignatureSpi"));
+	    putService(new PKCS11SignatureService
+		       (this, "Signature", "SHA512withRSA", "org.opensc.pkcs11.spi.PKCS11SignatureSpi"));
+	    putService(new PKCS11SignatureService
+		       (this, "Signature", "SHA1withDSA", "org.opensc.pkcs11.spi.PKCS11SignatureSpi"));
+	    putService(new PKCS11SignatureService
+		       (this, "Signature", "NONEwithDSA", "org.opensc.pkcs11.spi.PKCS11SignatureSpi"));
+	    putService(new PKCS11CipherService
+		       (this, "Cipher", "RSA/ECB/PKCS1Padding", "org.opensc.pkcs11.spi.PKCS11CipherSpi"));
+	    putService(new PKCS11KeyPairGeneratorService
+		       (this, "KeyPairGenerator", "RSA", "org.opensc.pkcs11.spi.PKCS11KeyPairGeneratorSpi"));
+	    putService(new PKCS11KeyPairGeneratorService
+		       (this, "KeyPairGenerator", "DSA", "org.opensc.pkcs11.spi.PKCS11KeyPairGeneratorSpi"));
 	}
 	
 	/**
@@ -192,9 +192,9 @@ public class PKCS11Provider extends Provider implements DestroyableParent
 	 */
 	public PKCS11Provider(String filename) throws IOException
 	{
-		super("OpenSC-PKCS11", version+0.001*patchlevel, "OpenSC PKCS11 provider.");
-		this.pkcs11ModuleHandle = 0;
-		initialize(filename);
+	    super("OpenSC-PKCS11", version+0.001*patchlevel, "OpenSC PKCS11 provider.");
+	    this.pkcs11ModuleHandle = 0;
+	    initialize(filename);
 	}
 
 	/**
@@ -209,9 +209,9 @@ public class PKCS11Provider extends Provider implements DestroyableParent
 	 */
 	public PKCS11Provider(String filename, String suffix) throws IOException
 	{
-		super("OpenSC-PKCS11-"+suffix, version+0.001*patchlevel, "OpenSC PKCS11 provider.");
-		this.pkcs11ModuleHandle = 0;
-		initialize(filename);
+	    super("OpenSC-PKCS11-"+suffix, version+0.001*patchlevel, "OpenSC PKCS11 provider.");
+	    this.pkcs11ModuleHandle = 0;
+	    initialize(filename);
 	}
 
 	// we have our own ServiceDescription implementation that overrides
@@ -221,43 +221,43 @@ public class PKCS11Provider extends Provider implements DestroyableParent
 	private static class PKCS11Service extends Service
 	{
 
-		private static final Class[] paramTypes = { PKCS11Provider.class,
-				String.class };
+	    private static final Class[] paramTypes = { PKCS11Provider.class,
+							String.class };
 
-		PKCS11Service(Provider provider, String type, String algorithm,
-				String className)
-		{
-			super(provider, type, algorithm, className, null, null);
-		}
+	    PKCS11Service(Provider provider, String type, String algorithm,
+			  String className)
+	    {
+		super(provider, type, algorithm, className, null, null);
+	    }
 
-		public Object newInstance(Object param)
-		{
-			try
-			{
-				// get the Class object for the implementation class
-				Class clazz;
-				PKCS11Provider provider = (PKCS11Provider) getProvider();
-				ClassLoader loader = provider.getClass().getClassLoader();
-				if (loader == null)
-				{
-					clazz = Class.forName(getClassName());
-				} else
-				{
-					clazz = loader.loadClass(getClassName());
-				}
+	    public Object newInstance(Object param)
+	    {
+		try
+		    {
+			// get the Class object for the implementation class
+			Class clazz;
+			PKCS11Provider provider = (PKCS11Provider) getProvider();
+			ClassLoader loader = provider.getClass().getClassLoader();
+			if (loader == null)
+			    {
+				clazz = Class.forName(getClassName());
+			    } else
+			    {
+				clazz = loader.loadClass(getClassName());
+			    }
 				
-				// fetch the (Provider, String) constructor
-				Constructor cons = clazz.getConstructor(paramTypes);
-				// invoke constructor and return the SPI object
-				Object obj = cons.newInstance(new Object[] { provider,
-						getAlgorithm() });
-				return obj;
+			// fetch the (Provider, String) constructor
+			Constructor cons = clazz.getConstructor(paramTypes);
+			// invoke constructor and return the SPI object
+			Object obj = cons.newInstance(new Object[] { provider,
+								     getAlgorithm() });
+			return obj;
 
-			} catch (Exception e)
-			{
-				throw new ProviderException("Caught exception in newInstance:",e);
-			}
-		}
+		    } catch (Exception e)
+		    {
+			throw new ProviderException("Caught exception in newInstance:",e);
+		    }
+	    }
 	}
 
 	private static class PKCS11SignatureService extends PKCS11Service
