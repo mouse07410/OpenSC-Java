@@ -4,8 +4,12 @@
 ac CC=clang
 ac CPP=clang -E
 ac CXX=clang++
-ac CFLAGS=-g2 -Wall -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
-ac CXXFLAGS=-g2 -Wall -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+ac CFLAGS=-g2 -Wall
+ac CXXFLAGS=-g2 -Wall
+# For cases when Makefile cannot determine that we're running on Darwin (MacOS), and 
+# have to force -isysroot here
+#ac CFLAGS=-g2 -Wall -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+#ac CXXFLAGS=-g2 -Wall -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
 ac JNI_CFLAGS=-I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/darwin
 ac LIBDYN=dylib
 ac DYN_LDFLAGS=-shared -dynamiclib
