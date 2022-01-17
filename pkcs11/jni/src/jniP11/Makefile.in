@@ -29,6 +29,12 @@ CXX  = @CXX@
 LD   = @CC@
 STRIP = @STRIP@
 
+UNAME := $(shell uname)
+
+ifeq ($(UNAME),Darwin)
+	SYSROOT="-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"
+endif
+
 # add -I.. in order to find config.h
 CFLAGS = \
 	@CFLAGS@  @DEFS@ @PKCS11_CFLAGS@ @JNI_CFLAGS@ @DYN_CFLAGS@ -I.. -I$(srcdir) -I$(top_srcdir)/jnix $(SYSROOT)

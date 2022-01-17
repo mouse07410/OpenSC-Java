@@ -23,6 +23,12 @@ LD   = @CXX@
 AR   = @AR@
 ARFLAGS   = @ARFLAGS@
 
+UNAME := $(shell uname)
+
+ifeq ($(UNAME),Darwin)
+        SYSROOT="-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"
+endif
+
 # add -I.. in order to find config.h
 CFLAGS = \
 	@CFLAGS@  @DEFS@ @JNI_CFLAGS@ @DYN_CFLAGS@ -I.. -I$(srcdir) $(SYSROOT)
