@@ -106,7 +106,7 @@
            <goals><goal>run</goal></goals>
            <phase>package</phase>
            <configuration>
-            <tasks>
+            <target>
               <mkdir dir="${jni.targetDir}/lib"/>
               <copy todir="${jni.targetDir}/lib">
                 <fileset dir="${jni.build.dir}/jniP11">
@@ -118,7 +118,7 @@
                   <include name="${jni.libPrefix}${project.artifactId}-${project.majorVersion}.${jni.libExtension}" />
                 </fileset>
               </zip>
-             </tasks>
+             </target>
            </configuration>
          </execution>
         </executions>
